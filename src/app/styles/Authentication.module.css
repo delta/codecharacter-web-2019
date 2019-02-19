@@ -123,7 +123,8 @@
 }
 
 .avatar-section::-webkit-scrollbar {
-  width: 2px;
+  cursor: pointer;
+  height: 5px;
 }
 
 .avatar-section::-webkit-scrollbar-track {
