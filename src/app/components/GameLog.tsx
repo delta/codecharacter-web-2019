@@ -7,8 +7,25 @@ import 'brace/mode/c_cpp';
 import 'brace/theme/terminal';
 
 export class GameLog extends React.Component<GameLogInterfaces.Props, {}> {
+  private editorRef = React.createRef<AceEditor>();
   constructor(props: GameLogInterfaces.Props) {
     super(props);
+  }
+
+  public componentDidUpdate() {
+    if (this.editorRef.current) {
+      // @ts-ignore
+      if (this.editorRef.current.editor) {
+        // @ts-ignore
+        const editor = this.editorRef.current.editor;
+        const lineNumber =
+          editor
+            .getSession()
+            .getValue()
+            .split('\n').length - 1;
+        editor.gotoLine(lineNumber);
+      }
+    }
   }
 
   public render() {
@@ -22,6 +39,8 @@ export class GameLog extends React.Component<GameLogInterfaces.Props, {}> {
 
     return (
       <AceEditor
+        ref={this.editorRef}
+        cursorStart={20}
         mode="c_cpp"
         theme={'terminal'}
         name="game_log_div"
