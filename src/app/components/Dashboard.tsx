@@ -25,7 +25,7 @@ export class Dashboard extends React.Component<
   public minEditorWidth = 350;
   public minRendererWidth = 50;
   public initialEditorRatio = 0.4;
-  public initialRendererHeight = 100;
+  public initialRendererHeight = 40;
   public compilationData = '';
 
   constructor(props: DashboardInterfaces.Props) {
