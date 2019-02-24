@@ -12,6 +12,7 @@ const actions = {
   resetGameLog: GameLogActions.resetGameLogState,
   updateDisplayDebugLog: GameLogActions.updateDisplayDebugLog,
   updateGameLog: GameLogActions.updateGameLog,
+  updateMatchPlayerId: GameLogActions.updateMatchPlayerId,
 };
 
 export interface GameLogStoreState {
@@ -19,6 +20,7 @@ export interface GameLogStoreState {
   gameLog: string;
   player1DebugLog: string;
   player2DebugLog: string;
+  matchPlayerId: number;
 }
 
 export type GameLogStoreAction = ActionType<typeof actions>;

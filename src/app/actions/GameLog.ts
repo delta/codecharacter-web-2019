@@ -6,6 +6,7 @@ export namespace GameLogActions {
     RESET_GAME_LOG_STATE = 'RESET_GAME_LOG_STATE',
     UPDATE_DISPLAY_DEBUG_LOG = 'UPDATE_DISPLAY_DEBUG_LOG',
     CLEAR_DISPLAY_DEBUG_LOG = 'CLEAR_DISPLAY_DEBUG_LOG',
+    UPDATE_MATCH_PLAYER_ID = 'MATCH_PLAYER_ID',
   }
 
   export const updateGameLog = (
@@ -25,4 +26,7 @@ export namespace GameLogActions {
     action(Type.UPDATE_DISPLAY_DEBUG_LOG, { log });
 
   export const clearDisplayDebugLog = () => action(Type.CLEAR_DISPLAY_DEBUG_LOG);
+
+  export const updateMatchPlayerId = (matchPlayerId: number) =>
+    action(Type.UPDATE_MATCH_PLAYER_ID, { matchPlayerId });
 }

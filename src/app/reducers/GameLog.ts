@@ -4,6 +4,7 @@ import * as GameLogInterfaces from 'app/types/GameLog';
 const gameLogStoreIntialState: GameLogInterfaces.GameLogStoreState = {
   displayDebugLog: '',
   gameLog: '',
+  matchPlayerId: 1,
   player1DebugLog: '',
   player2DebugLog: '',
 };
@@ -36,6 +37,12 @@ export const gameLogReducer = (
       return {
         ...state,
         displayDebugLog: '',
+      };
+    }
+    case GameLogActions.Type.UPDATE_MATCH_PLAYER_ID: {
+      return {
+        ...state,
+        matchPlayerId: action.payload.matchPlayerId,
       };
     }
     default:
