@@ -24,6 +24,7 @@ export class GameLog extends React.Component<GameLogInterfaces.Props, {}> {
             .getValue()
             .split('\n').length - 1;
         editor.gotoLine(lineNumber);
+        editor.resize();
       }
     }
   }
@@ -53,7 +54,7 @@ export class GameLog extends React.Component<GameLogInterfaces.Props, {}> {
         setOptions={options}
         editorProps={{ $blockScrolling: true }}
         width={'100%'}
-        height={'100%'}
+        height={`${this.props.height}px`}
         value={this.props.debugLog}
       />
     );
