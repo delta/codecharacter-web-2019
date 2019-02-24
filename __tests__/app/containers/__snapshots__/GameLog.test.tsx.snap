@@ -2,51 +2,7 @@
 
 exports[`GameLog Container Should render 1`] = `
 <GameLog
-  debugLog="dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l fdkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f 
-dkfa;sldkfja;sdlfa fasdfaoiej 
- fsxvbhaoedfi afousfdljg do l f"
+  debugLog=""
   dispatch={[Function]}
   height={100}
 />

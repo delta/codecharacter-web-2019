@@ -1,6 +1,5 @@
 import {
   faBell,
-  faCode,
   faCodeBranch,
   faCog,
   faInfoCircle,
@@ -33,10 +32,13 @@ export class Sidebar extends React.Component<SideBarInterfaces.Props, {}> {
           className={classnames('w-100 justify-content-center align-items-center', styles.Sidebar)}
         >
           <Button
-            className={classnames('py-2 px-auto text-white', styles.customBtn)}
+            className={classnames(
+              'py-2 px-auto text-white d-flex justify-content-center',
+              styles.customBtn,
+            )}
             onClick={() => closeSidePanelTab()}
           >
-            <FontAwesomeIcon icon={faCode} />
+            <img src="assets/img/codecharacterLogo.jpeg" height={30} width={30} style={{}} />
           </Button>
           <Button
             className={classnames('py-2 px-auto editor-settings-btn-ctrl', styles.customBtn, {
