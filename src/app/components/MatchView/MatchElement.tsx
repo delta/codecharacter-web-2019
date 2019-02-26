@@ -112,8 +112,8 @@ export class MatchElement extends React.Component<
               >
                 <img
                   src={this.MAP_THUMBNAIL[game.mapId - 1]}
-                  width={20}
-                  height={20}
+                  width={30}
+                  height={30}
                   style={{
                     boxShadow: `0 0 20px ${
                       game.verdict === '0'
