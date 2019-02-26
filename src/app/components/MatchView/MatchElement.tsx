@@ -12,11 +12,11 @@ export class MatchElement extends React.Component<
   MatchInterfaces.ElementState
 > {
   public MAP_THUMBNAIL = [
-    'assets/img/maps/islesofcodechar.png',
-    'assets/img/maps/timeturner.png',
-    'assets/img/maps/treacherousmangroves.png',
-    'assets/img/maps/mysterymap.png',
-    'assets/img/maps/mysterymap.png',
+    'islesofcodechar',
+    'timeturner',
+    'treacherousmangroves',
+    'mysterymap',
+    'mysterymap',
   ];
 
   public constructor(props: MatchInterfaces.ElementProps) {
@@ -107,15 +107,16 @@ export class MatchElement extends React.Component<
                 key={index}
                 className={classnames(styles.game)}
                 onClick={() => getGameLogs(game.id)}
+                title={this.MAP_THUMBNAIL[game.mapId - 1]}
               >
                 <img
-                  src={this.MAP_THUMBNAIL[game.mapId - 1]}
+                  src={`assets/img/maps/${this.MAP_THUMBNAIL[game.mapId - 1]}.png`}
                   width={30}
                   height={30}
                   style={{
                     border: `4px solid ${
                       game.verdict === '0'
-                        ? 'yellow'
+                        ? '#957f00'
                         : game.verdict === '1'
                           ? '#047104'
                           : game.verdict === '2'
