@@ -113,16 +113,17 @@ export class MatchElement extends React.Component<
                   width={30}
                   height={30}
                   style={{
-                    boxShadow: `0 0 20px ${
+                    border: `4px solid ${
                       game.verdict === '0'
                         ? 'yellow'
                         : game.verdict === '1'
-                          ? 'green'
+                          ? '#047104'
                           : game.verdict === '2'
-                            ? 'red'
-                            : 'gray'
+                            ? '#770000'
+                            : 'black'
                       }`,
                       marginBottom: 5,
+                      borderRadius: 3,
                   }}
                 />
               </span>
