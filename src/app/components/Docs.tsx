@@ -1,5 +1,3 @@
-import * as styles from 'app/styles/Docs.module.css';
-import classnames from 'classnames';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
