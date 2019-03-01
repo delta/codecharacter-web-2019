@@ -15,6 +15,7 @@ import * as React from 'react';
 import { Grid, Row } from 'react-bootstrap';
 /* tslint:disable-next-line:import-name */
 import SplitPane from 'react-split-pane';
+import { Welcome } from './Welcome';
 
 export class Dashboard extends React.Component<
   DashboardInterfaces.Props,
@@ -73,7 +74,13 @@ export class Dashboard extends React.Component<
       splitPaneState,
       isJoyRideActive,
     } = this.state;
-    const { isLoggedIn, isAuthenticationOpen, setIsAuthenticationOpen } = this.props;
+    const {
+      isLoggedIn,
+      isAuthenticationOpen,
+      setIsAuthenticationOpen,
+      isWelcomeModalOpen,
+      closeWelcomeModal,
+    } = this.props;
 
     let editorWidth;
     switch (splitPaneState) {
@@ -99,6 +106,7 @@ export class Dashboard extends React.Component<
 
     return (
       <div>
+        {isWelcomeModalOpen ? <Welcome closeWelcomeModal={() => closeWelcomeModal()} /> : null}
         {isLoggedIn && isJoyRideActive ? <Joyride toggleJoyRide={this.onToggleJoyRide} /> : null}
         {isAuthenticationOpen ? (
           <Authentication setIsAuthenticationOpen={setIsAuthenticationOpen} />
