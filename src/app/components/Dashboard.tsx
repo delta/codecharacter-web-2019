@@ -117,6 +117,10 @@ export class Dashboard extends React.Component<
           minSize={this.minEditorWidth + fixedLeftPaneWidth}
           maxSize={windowWidth - this.minRendererWidth}
           size={this.state.fixedLeftPaneWidth + editorWidth}
+          style={{
+            filter: `blur(${(isAuthenticationOpen || isWelcomeModalOpen) ? 2 : 0}px)`,
+            transition: 'filter 0.7s'
+          }}
           resizerClassName={style.vertical}
           onChange={this.onSplitPaneResize}
           allowResize={splitPaneState === DashboardInterfaces.SplitPaneState.BOTH}
