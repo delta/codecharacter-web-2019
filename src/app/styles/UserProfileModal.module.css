@@ -123,7 +123,7 @@
 .formHeading {
   padding: 0px 10px;
   font-size: 20px;
-  border-bottom: 2px solid #ebebeb;
+  border-bottom: 2px solid #828282;
   margin: 0 0 10px 0px;
 }
 
@@ -186,4 +186,23 @@
 
 .userEdit-wrap::-webkit-scrollbar-thumb {
   background-color: #ddd;
+}
+
+.profileContent {
+  color: #fff;
+}
+
+.contentHeading {
+  font-size: 12px;
+  margin-bottom: 0px !important;
+}
+
+.contentRow {
+  border-bottom: 2px solid #525252;
+  margin: 10px 20px;
+}
+
+.contentBody {
+  font-size: 18px;
+  margin: 5px 0px;
 }

@@ -13,6 +13,7 @@ export interface ListDisabled {
 }
 
 export interface State {
+  isEdit: boolean;
   avatar: string;
   username: string;
   oldPassword: string;

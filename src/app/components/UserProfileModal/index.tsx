@@ -1,13 +1,19 @@
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { EditPassword } from 'app/components/UserProfileModal/EditPassword';
 import { EditProfile } from 'app/components/UserProfileModal/EditProfile';
 import * as styles from 'app/styles/UserProfileModal.module.css';
+import { Avatar } from 'app/types/Authentication/Register';
 import * as UserProfileInterfaces from 'app/types/UserProfileModal';
 import classnames from 'classnames';
 import * as React from 'react';
-import { Col, Grid, Row } from 'react-bootstrap';
+import { Button, Col, Grid, Row } from 'react-bootstrap';
 // tslint:disable-next-line:import-name
 import ReactFlagsSelect from 'react-flags-select';
 
+// @ts-ignore
+// tslint:disable-next-line:import-name
+import ReactCountryFlag from 'react-country-flag';
 export class UserProfileModal extends React.Component<
   UserProfileInterfaces.Props,
   UserProfileInterfaces.State
@@ -23,6 +29,7 @@ export class UserProfileModal extends React.Component<
       avatar: userDetails.country,
       country: userDetails.country,
       fullName: userDetails.fullName,
+      isEdit: false,
       listDisabled: {
         isFlagSelectDisabled: true,
         isFullNameDisabled: true,
@@ -63,46 +70,114 @@ export class UserProfileModal extends React.Component<
       repeatPassword,
       listDisabled,
       avatar,
+      isEdit,
     } = this.state;
     const { userDetails } = this.props;
     return (
       <Grid fluid={true} className={classnames(styles.UserEdit)}>
         <Row className="justify-content-between py-2 pl-3">
           <Col className="text-light font-weight-bold my-auto">USER DETAILS</Col>
+          <Col className="mr-3">
+            <Button
+              className={classnames(
+                styles.customBtn,
+                'd-flex align-items-center justify-content-center',
+                {
+                  [`${styles.editPenActive}`]: isEdit,
+                },
+              )}
+              style={{
+                height: '30px',
+              }}
+              onClick={() => this.setState({ isEdit: !isEdit })}
+            >
+              <FontAwesomeIcon icon={faPen} />
+            </Button>
+          </Col>
         </Row>
-        <div className={classnames(styles['userEdit-wrap'], 'row')}>
-          <Row
-            style={{
-              overflowX: 'hidden',
-              paddingLeft: '10px',
-            }}
-          >
-            <EditProfile
-              handleEditProfile={this.handleEditProfile}
-              onInputChange={this.onInputChange}
-              inputEnabler={this.inputEnabler}
-              editProfileRef={this.editProfileRef}
-              reactFlagRef={this.reactFlagRef}
-              username={username}
-              listDisabled={listDisabled}
-              fullName={fullName}
-              userDetails={userDetails}
-              country={country}
-              avatar={avatar}
-            />
-            <EditPassword
-              handleEditPassword={this.handleEditPassword}
-              onInputChange={this.onInputChange}
-              inputEnabler={this.inputEnabler}
-              editPasswordRef={this.editPasswordRef}
-              listDisabled={listDisabled}
-              oldPassword={oldPassword}
-              password={password}
-              repeatPassword={repeatPassword}
-              userDetails={userDetails}
-            />
-          </Row>
-        </div>
+        {isEdit ? (
+          <div className={classnames(styles['userEdit-wrap'], 'row')}>
+            <Row
+              style={{
+                overflowX: 'hidden',
+                paddingLeft: '10px',
+              }}
+            >
+              <EditProfile
+                handleEditProfile={this.handleEditProfile}
+                onInputChange={this.onInputChange}
+                inputEnabler={this.inputEnabler}
+                editProfileRef={this.editProfileRef}
+                reactFlagRef={this.reactFlagRef}
+                username={username}
+                listDisabled={listDisabled}
+                fullName={fullName}
+                userDetails={userDetails}
+                country={country}
+                avatar={avatar}
+              />
+              <EditPassword
+                handleEditPassword={this.handleEditPassword}
+                onInputChange={this.onInputChange}
+                inputEnabler={this.inputEnabler}
+                editPasswordRef={this.editPasswordRef}
+                listDisabled={listDisabled}
+                oldPassword={oldPassword}
+                password={password}
+                repeatPassword={repeatPassword}
+                userDetails={userDetails}
+              />
+            </Row>
+          </div>
+        ) : (
+          <div className={classnames(styles.profileContent)}>
+            <Row>
+              <div className={classnames('col', styles.contentRow)}>
+                <p className={classnames(styles.contentHeading)}>Username</p>
+                <div className={classnames(styles.contentBody)}>{username}</div>
+              </div>
+            </Row>
+            <Row>
+              <div className={classnames('col', styles.contentRow)}>
+                <p className={classnames(styles.contentHeading)}>Name</p>
+                <div className={classnames(styles.contentBody)}>{fullName}</div>
+              </div>
+            </Row>
+            <Row>
+              <div className={classnames('col', styles.contentRow)}>
+                <p className={classnames(styles.contentHeading)}>Country</p>
+                <div className={classnames(styles.contentBody, 'd-flex align-items-center')}>
+                  <div className={classnames(styles['leader-flag'])}>
+                    <ReactCountryFlag
+                      styleProps={{
+                        height: '50px',
+                        width: '50px',
+                      }}
+                      code={country}
+                      svg
+                      alt={country}
+                    />
+                  </div>
+                  <span style={{ marginLeft: '10px' }}>{country}</span>
+                </div>
+              </div>
+            </Row>
+            <Row>
+              <div className={classnames('col', styles.contentRow)}>
+                <p className={classnames(styles.contentHeading)}>Avatar</p>
+                <div className={classnames(styles.contentBody, 'd-flex align-items-center')}>
+                  <img
+                    width={50}
+                    height={50}
+                    title={avatar}
+                    // @ts-ignore
+                    src={Avatar[avatar]}
+                  />
+                </div>
+              </div>
+            </Row>
+          </div>
+        )}
       </Grid>
     );
   }

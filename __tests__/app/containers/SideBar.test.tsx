@@ -23,7 +23,6 @@ describe('SideBar Container', () => {
   it('Should render', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
   it('Should Dispatch setSidePanelTab Docs or None', () => {
     const button = wrapper.find('.documentation-btn-ctrl').at(1);
     button.simulate('click');
