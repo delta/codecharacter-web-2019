@@ -108,7 +108,6 @@ export class Leaderboard extends React.Component<
         )}
         <div
           ref={this.leaderboard}
-          onScroll={this.trackScrolling}
           className={classnames(styles['leaderboard-wrap'], 'container-fluid')}
         >
           <Row>
@@ -187,15 +186,6 @@ export class Leaderboard extends React.Component<
       </Grid>
     );
   }
-
-  public trackScrolling = () => {
-    const { loading } = this.props;
-    const leaderboard = this.leaderboard.current!;
-    if (loading) return;
-    if (leaderboard.scrollHeight - leaderboard.scrollTop === leaderboard.clientHeight) {
-      this.props.getLeaderboard(this.state.pattern, this.state.nextFetchIndex);
-    }
-  };
 
   private searchLeaderboard = () => {
     this.props.clearLeaderboard();
