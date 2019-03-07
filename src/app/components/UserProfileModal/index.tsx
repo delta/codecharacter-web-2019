@@ -132,47 +132,44 @@ export class UserProfileModal extends React.Component<
         ) : (
           <div className={classnames(styles.profileContent)}>
             <Row>
-              <div className={classnames('col', styles.contentRow)}>
-                <p className={classnames(styles.contentHeading)}>Username</p>
-                <div className={classnames(styles.contentBody)}>{username}</div>
+              <div className={classnames('col d-flex align-items-center justify-content-center')}>
+                <img
+                  width={90}
+                  height={90}
+                  title={avatar}
+                  // @ts-ignore
+                  src={Avatar[avatar]}
+                />
               </div>
             </Row>
             <Row>
-              <div className={classnames('col', styles.contentRow)}>
-                <p className={classnames(styles.contentHeading)}>Name</p>
-                <div className={classnames(styles.contentBody)}>{fullName}</div>
-              </div>
-            </Row>
-            <Row>
-              <div className={classnames('col', styles.contentRow)}>
-                <p className={classnames(styles.contentHeading)}>Country</p>
-                <div className={classnames(styles.contentBody, 'd-flex align-items-center')}>
-                  <div className={classnames(styles['leader-flag'])}>
+              <div
+                className={classnames(
+                  'col d-flex flex-column justify-content-center align-items-center',
+                )}
+              >
+                <div className={classnames('h4 p-2')}>{fullName}</div>
+                <div className={classnames('h6 p-2')}>
+                  &nbsp;&nbsp;&nbsp;{username}
+                  {userDetails.college
+                    ? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${userDetails.college}`
+                    : ''}
+                  &nbsp;&nbsp;&nbsp;
+                </div>
+                <div className={classnames('h6 p-2')}>
+                  &nbsp;&nbsp;&nbsp;{userDetails.type}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                  {
                     <ReactCountryFlag
                       styleProps={{
-                        height: '50px',
-                        width: '50px',
+                        height: '25px',
+                        width: '25px',
                       }}
                       code={country}
                       svg
                       alt={country}
                     />
-                  </div>
-                  <span style={{ marginLeft: '10px' }}>{country}</span>
-                </div>
-              </div>
-            </Row>
-            <Row>
-              <div className={classnames('col', styles.contentRow)}>
-                <p className={classnames(styles.contentHeading)}>Avatar</p>
-                <div className={classnames(styles.contentBody, 'd-flex align-items-center')}>
-                  <img
-                    width={50}
-                    height={50}
-                    title={avatar}
-                    // @ts-ignore
-                    src={Avatar[avatar]}
-                  />
+                  }
+                  &nbsp;&nbsp;&nbsp;
                 </div>
               </div>
             </Row>

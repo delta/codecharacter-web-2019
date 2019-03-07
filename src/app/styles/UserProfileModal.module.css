@@ -189,20 +189,6 @@
 }
 
 .profileContent {
+  margin-top: 20px;
   color: #fff;
-}
-
-.contentHeading {
-  font-size: 12px;
-  margin-bottom: 0px !important;
-}
-
-.contentRow {
-  border-bottom: 2px solid #525252;
-  margin: 10px 20px;
-}
-
-.contentBody {
-  font-size: 18px;
-  margin: 5px 0px;
 }
