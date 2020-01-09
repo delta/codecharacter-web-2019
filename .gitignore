@@ -9,3 +9,4 @@ build
 dist
 package-lock.json
 src/config/config.ts
+src/config/config.js
