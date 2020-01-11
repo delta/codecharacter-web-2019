@@ -150,7 +150,7 @@ export class UserProfileModal extends React.Component<
         this.setState({
           listDisabled: {
             ...listDisabled,
-            isEmailDisabled: true,
+            // isEmailDisabled: true,
             isFlagSelectDisabled: true,
             isFullNameDisabled: true,
             isUserNameDisabled: true,

@@ -12,6 +12,8 @@ var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CompressionPlugin = require('compression-webpack-plugin'); //gzip
+var BrotliPlugin = require('brotli-webpack-plugin');
 
 module.exports = {
   context: sourcePath,
@@ -138,7 +140,20 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'assets',
       to: 'assets'
-    }])
+    }]),
+    new CompressionPlugin({ //gzip plugin
+     filename: '[path].gz[query]',
+     algorithm: 'gzip',
+     test: /\.(js|css|html|svg)$/,
+     threshold: 8192,
+     minRatio: 0.8
+   }),
+   // new BrotliPlugin({ //brotli plugin
+   //   asset: '[path].br[query]',
+   //   test: /\.(js|css|html|svg)$/,
+   //   threshold: 10240,
+   //   minRatio: 0.8
+   // })
   ],
   devServer: {
     contentBase: sourcePath,
